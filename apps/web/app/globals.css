@@ -1,0 +1,372 @@
+/**
+ * ==============================================================================
+ * DESIGN TOKENS REFERENCE (Source of Truth: design.md)
+ * ==============================================================================
+ *
+ * COLORS:
+ * --color-primary: #0b0b0b - Default canvas in dark sections; primary action fill on light sections
+ * --color-on-primary: #ffffff - Headline color on dark surfaces; ink color on brand/ink buttons
+ * --color-brand: #f36458 - Signature coral-red accent; reserved for CTAs, brand dot, brand card surface
+ * --color-brand-deep: #dd0000 - Destructive/error variant
+ * --color-ink: #0b0b0b - Headlines and body on light surfaces
+ * --color-ink-soft: #212121 - Secondary text on light surfaces; dark card container background
+ * --color-graphite: #353535 - Tertiary text and dividers in dark sections
+ * --color-slate: #3c4758 - Cool blue-grey neutral for secondary-link text on dark
+ * --color-slate-soft: #505b6c - Cool blue-grey neutral for de-emphasized rule lines on dark
+ * --color-mute: #797979 - Mid-grey mono caption color, footer eyebrows
+ * --color-ash: #b9b9b9 - Default body text on dark surfaces
+ * --color-hairline: #ededed - 1-pixel border on light cards, dividers, feature-grid rules
+ * --color-hairline-soft: #353535 - 1-pixel border color on dark cards and dialog panels
+ * --color-canvas: #0b0b0b - Default dark-section background; near-black with no warmth
+ * --color-canvas-soft: #212121 - Card and panel surface inside dark sections; single-step elevation
+ * --color-canvas-light: #ffffff - Primary light-mode background (pricing, light bands)
+ * --color-canvas-paper: #ededed - Warm-grey alternate light surface for hero-card tiles
+ * --color-on-canvas-light: #0b0b0b - Text on light canvas
+ * --color-link-blue: #0052ef - Inline link color on light surfaces
+ * --color-link-blue-soft: #55beff - Link color on dark surfaces
+ * --color-surface-blue-bg: #afe3ff - Soft-blue alert/info surface fill
+ * --color-success: #37cd84 - Validation success, status indicators
+ * --color-error: #dd0000 - Required-field markers and error messages
+ *
+ * TYPOGRAPHY FONT FAMILIES:
+ * --font-display: Melodrama (or waldenburgNormal) - Display & Hero Headlines
+ * --font-sans: Inter (or waldenburgNormal) - Running body text, subtitles, UI
+ * --font-mono: IBM Plex Mono - Technical eyebrows, tags, code
+ * ==============================================================================
+ */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Design System Colors */
+  --color-canvas: #0b0b0b;
+  --color-canvas-soft: #212121;
+  --color-canvas-light: #ffffff;
+  --color-canvas-paper: #ededed;
+  --color-brand: #f36458;
+  --color-brand-deep: #dd0000;
+  --color-ink: #0b0b0b;
+  --color-ink-soft: #212121;
+  --color-graphite: #353535;
+  --color-slate: #3c4758;
+  --color-slate-soft: #505b6c;
+  --color-mute: #797979;
+  --color-ash: #b9b9b9;
+  --color-hairline: #ededed;
+  --color-hairline-soft: #353535;
+  --color-link-blue: #0052ef;
+  --color-link-blue-soft: #55beff;
+  --color-surface-blue-bg: #afe3ff;
+  --color-success: #37cd84;
+  --color-error: #dd0000;
+
+  /* Font Families */
+  --font-display: var(--font-display), serif;
+  --font-sans: var(--font-sans), Inter, system-ui, sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* Typography Scale */
+  --text-display-mega: 112px;
+  --text-display-xl: 72px;
+  --text-display-lg: 60px;
+  --text-display-md: 48px;
+  --text-display-sm: 38px;
+  --text-heading-md: 32px;
+  --text-heading-sm: 24px;
+  --text-subtitle: 18px;
+  --text-body: 16px;
+  --text-body-sm: 15px;
+  --text-caption: 13px;
+  --text-meta: 12px;
+
+  /* Spacing Scale */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 64px;
+  --spacing-section-lg: 96px;
+
+  /* Radius Scale */
+  --radius-app-xs: 3px;
+  --radius-app-sm: 4px;
+  --radius-app-md: 5px;
+  --radius-app-lg: 6px;
+  --radius-marketing: 12px;
+  --radius-full: 99999px;
+
+  /* Shadcn Semantic Utilities */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+}
+
+/* ==============================================================================
+   THEME CONFIGURATION (Light Theme FIRST as Default, Dark Theme on .dark)
+   ============================================================================== */
+
+/* 1. LIGHT THEME (DEFAULT :root - White Canvas, Black Ink Text) */
+:root {
+  /* Direct Design Tokens for Light Surface */
+  --color-primary: #0b0b0b;
+  --color-on-primary: #ffffff;
+  --color-brand: #f36458;
+  --color-brand-deep: #dd0000;
+  --color-ink: #0b0b0b;
+  --color-ink-soft: #212121;
+  --color-graphite: #353535;
+  --color-slate: #3c4758;
+  --color-slate-soft: #505b6c;
+  --color-mute: #797979;
+  --color-ash: #b9b9b9;
+  --color-hairline: #ededed;
+  --color-hairline-soft: #353535;
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #ededed;
+  --color-canvas-light: #ffffff;
+  --color-canvas-paper: #ededed;
+
+  /* Shadcn UI Variables - Light Theme */
+  --background: #ffffff;
+  /* Canvas light (#ffffff) */
+  --foreground: #0b0b0b;
+  /* Black ink (#0b0b0b) */
+  --card: #ffffff;
+  /* White card */
+  --card-foreground: #0b0b0b;
+  /* Ink text */
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0b;
+  --primary: #0b0b0b;
+  /* button-primary-on-light: #0b0b0b */
+  --primary-foreground: #ffffff;
+  /* text: #ffffff */
+  --secondary: #ededed;
+  /* Canvas paper (#ededed) */
+  --secondary-foreground: #212121;
+  /* Ink soft */
+  --muted: #ededed;
+  --muted-foreground: #797979;
+  /* Mute text */
+  --accent: #f36458;
+  /* Coral-red signature accent */
+  --accent-foreground: #0b0b0b;
+  --destructive: #dd0000;
+  /* Brand deep red */
+  --border: #ededed;
+  /* Hairline divider (#ededed) */
+  --input: #ededed;
+  --ring: #0052ef;
+  /* Link blue focus ring */
+  --radius: 99999px;
+  /* Rounded full for CTAs */
+}
+
+/* 2. DARK THEME (.dark class - Near-Black Canvas, White Text as per design.md) */
+.dark {
+  /* Direct Design Tokens for Dark Surface */
+  --color-canvas: #0b0b0b;
+  --color-canvas-soft: #212121;
+
+  /* Shadcn UI Variables - Dark Theme (design.md Buttons & Colors) */
+  --background: #0b0b0b;
+  /* Dark canvas (#0b0b0b) */
+  --foreground: #ffffff;
+  /* White headline & text */
+  --card: #212121;
+  /* Canvas soft (#212121) */
+  --card-foreground: #ffffff;
+  /* White text on cards */
+  --popover: #212121;
+  --popover-foreground: #ffffff;
+
+  /* Primary Button on Dark (button-primary in design.md: bg #ffffff, text #0b0b0b) */
+  --primary: #ffffff;
+  --primary-foreground: #0b0b0b;
+
+  /* Secondary Button on Dark (button-secondary-dark in design.md: bg #212121, text #b9b9b9) */
+  --secondary: #212121;
+  --secondary-foreground: #b9b9b9;
+
+  /* Muted / Outline Button on Dark */
+  --muted: #212121;
+  --muted-foreground: #b9b9b9;
+
+  /* Brand Accent */
+  --accent: #f36458;
+  --accent-foreground: #0b0b0b;
+  --destructive: #dd0000;
+  --border: #353535;
+  /* Hairline soft border (#353535) */
+  --input: #353535;
+  --ring: #f36458;
+  /* Coral-red focus ring */
+}
+
+/* ==============================================================================
+   SECTION-SCOPED POLARITY UTILITIES (Saniti Section Cadence)
+   ============================================================================== */
+
+.marketing-section-dark {
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+.marketing-section-light {
+  background-color: #ffffff;
+  color: #0b0b0b;
+}
+
+.marketing-section-paper {
+  background-color: #ededed;
+  color: #0b0b0b;
+}
+
+.feature-card-dark {
+  background-color: #212121;
+  color: #ffffff;
+  border: 1px solid #353535;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.feature-card-light {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  border: 1px solid #ededed;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.feature-card-brand {
+  background-color: #f36458;
+  color: #0b0b0b;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.studio-window {
+  background-color: #212121;
+  color: #ffffff;
+  border: 1px solid #353535;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+/* ==============================================================================
+   BASE ELEMENT STYLES
+   ============================================================================== */
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -4.48px;
+    font-feature-settings: "cv01", "cv11", "cv12", "cv13", "ss07";
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: var(--text-h2);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -2.88px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: 400;
+    line-height: 0.8;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  h4 {
+    font-family: var(--font-sans);
+    font-size: var(--text-h4);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -1.68px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  h5 {
+    font-family: var(--font-sans);
+    font-size: var(--text-h5);
+    font-weight: 425;
+    line-height: 1.13;
+    letter-spacing: -0.32px;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  h6 {
+    font-family: var(--font-sans);
+    font-size: var(--text-h6);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.24px;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: var(--color-link-blue);
+    text-decoration: none;
+  }
+}
