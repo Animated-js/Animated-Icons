@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { IBM_Plex_Mono, Inter, Geist } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Header } from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const fontDisplay = localFont({
+  src: "./fonts/Melodrama-Variable.woff2",
+  variable: "--font-display"
+})
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+const fontMono = IBM_Plex_Mono({
+  weight: ["400", '600'],
+  subsets: ['latin'],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -22,9 +29,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" className={cn("font-sans", geist.variable)} suppressHydrationWarning>
+
+      <body className={`${fontDisplay.variable} ${geist.variable} ${fontMono.variable}`} >
+
+        <ThemeProvider attribute="class"
+          enableSystem
+          disableTransitionOnChange>
+
+          <Header />
+          <main className="">
+            {children}
+          </main>
+
+        </ThemeProvider>
       </body>
     </html>
   );
