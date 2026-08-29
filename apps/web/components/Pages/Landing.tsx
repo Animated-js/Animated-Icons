@@ -5,6 +5,7 @@ import { ReactIcon } from "../icons/React";
 import { TypeScriptIcon } from "../icons/Typescript";
 import { TailwindIcon } from "../icons/Tailwind";
 import { FramerMotionIcon } from "../icons/FramerMotion";
+import { SearchComponent } from "../ui/custom-ui/SearchComp";
 
 
 const WeWorkInData = [
@@ -15,12 +16,12 @@ const WeWorkInData = [
 ]
 
 export function Landing() {
-    return <div className=" min-h-screen flex flex-col justify-center items-center bg-black text-white">
+    return <div className=" min-h-screen flex flex-col justify-center items-center bg-black dark:bg-white">
 
         {/* Hero section */}
-        <section className="flex justify-between flex-col pt-28 md:10 lg:pt-30 gap-8 bg-yellow-300 w-full min-h-screen md:min-h-auto" >
+        <section className="flex justify-between flex-col pt-28 md:10 lg:pt-22 gap-8 dark:bg-white bg-black w-full min-h-screen md:min-h-auto" >
 
-            <div className="flex flex-col gap-15 w-full md:w-fit md:ml-8 lg:ml-24 py-15 px-10 bg-canvas-light dark:bg-canvas text-background">
+            <div className="flex flex-col gap-15 w-full md:w-fit md:ml-8 lg:ml-24 py-15 px-10 bg-white dark:bg-black">
 
                 <div className="flex justify-between text-black dark:text-white items-center font-mono">
                     <h3>
@@ -85,8 +86,12 @@ export function Landing() {
         </section >
 
 
-        <section className="py-20">
-            hi
+
+        {/* Icons section */}
+        <section className="py-20 w-full px-20 bg-white dark:bg-black">
+            <div className="w-full flex justify-center">
+                <SearchComponent />
+            </div>
         </section>
 
 

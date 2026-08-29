@@ -25,7 +25,7 @@ export function ThemeToggle() {
         </Button >
     }
 
-    else return <Button className={"group hover:bg-background transition duration-300 hover:text-black dark:hover:text-white dark:hover:bg-background"}
+    else return <Button className={"group hover:bg-background transition duration-300 hover:text-black dark:hover:text-white dark:hover:bg-background hover:border-ash/80"}
         onClick={() =>
             theme === 'light' ? setTheme("dark") : setTheme('light')
         }>
