@@ -18,9 +18,9 @@ export function Landing() {
     return <div className=" min-h-screen flex flex-col justify-center items-center bg-black text-white">
 
         {/* Hero section */}
-        <section className="flex justify-between flex-col pt-24 gap-4 bg-yellow-300 w-full h-screen" >
+        <section className="flex justify-between flex-col pt-28 md:10 lg:pt-30 gap-8 bg-yellow-300 w-full min-h-screen md:min-h-auto" >
 
-            <div className="w-fit min-w-[48%] flex flex-col gap-7 ml-24 py-15 px-10 bg-canvas-light dark:bg-canvas text-background">
+            <div className="flex flex-col gap-15 w-full md:w-fit md:ml-8 lg:ml-24 py-15 px-10 bg-canvas-light dark:bg-canvas text-background">
 
                 <div className="flex justify-between text-black dark:text-white items-center font-mono">
                     <h3>
@@ -30,13 +30,16 @@ export function Landing() {
                         v1.1.0
                     </h3>
                 </div>
-                <h1 className="text-5xl  md:text-8xl lg:text-8xl text-black dark:text-white tracking-normal">
-                    Animated
-                    <br />Icons
-                </h1>
 
-                <div className="flex  flex-col gap-15">
-                    <div className="gap-8 flex items-center pl-4" >
+
+                <div className="flex flex-col gap-6">
+
+                    <h1 className="text-7xl  md:text-8xl lg:text-8xl text-black dark:text-white tracking-normal">
+                        Animated
+                        <br />Icons
+                    </h1>
+
+                    <div className="gap-4 md:gap-8 flex flex-col md:flex-row pl-4" >
                         <Button variant={"noClass"} className="uppercase text-xs bg-yellow-300 text-black px-3 py-5 rounded-none">
                             Explore Icons
                             <SearchIcon />
@@ -46,6 +49,9 @@ export function Landing() {
                             Prompt to Icon
                         </Button>
                     </div>
+                </div>
+
+                <div className="flex flex-col ">
 
                     <div className="gap-4 flex flex-col" >
                         <div className="font-mono text-xs uppercase text-black dark:text-white tracking-widest">
@@ -54,10 +60,10 @@ export function Landing() {
                             </span>
                             We work in:
                         </div>
-                        <div className="flex gap-5">
+                        <div className="flex flex-wrap gap-5">
                             {
                                 WeWorkInData.map((data) => {
-                                    return <span key={data.name} className="flex text-white dark:hover:text-white hover:bg-ash/20 gap-2 uppercase text-xs tracking-widest dark:bg-canvas-paper dark:hover:bg-gray-950  dark:text-black hover:text-black bg-black transition duration-200 items-center border border-ash/50 py-2 px-3">
+                                    return <span key={data.name} className="flex w-fit text-white dark:hover:text-white hover:bg-ash/20 gap-2 uppercase text-xs tracking-widest dark:bg-canvas-paper dark:hover:bg-gray-950  dark:text-black hover:text-black bg-black transition duration-200 items-center border border-ash/50 py-2 px-3">
                                         <data.Icon size={18} /> {data.name}
                                     </span>
                                 })
@@ -69,9 +75,9 @@ export function Landing() {
 
             </div>
 
-            <div className="uppercase tracking-wider text-xs font-medium text-black flex border-black border items-center justify-between px-4 md:px-6 lg:px-20   lg:py-3">
+            <div className="uppercase tracking-wider text-xs font-medium text-black flex border-black border items-center justify-between px-4 md:px-6 lg:px-20 py-2 lg:py-3">
                 {WeWorkInData.map((data) => {
-                    return <span>
+                    return <span key={data.name}>
                         {data.name}
                     </span>
                 })}

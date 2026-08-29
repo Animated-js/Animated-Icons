@@ -25,12 +25,15 @@ export function ThemeToggle() {
         </Button >
     }
 
-    else return <Button className={"dark:bg-canvas-paper border-white"}
+    else return <Button className={"group hover:bg-background transition duration-300 hover:text-black dark:hover:text-white dark:hover:bg-background"}
         onClick={() =>
             theme === 'light' ? setTheme("dark") : setTheme('light')
         }>
         {
-            theme === "light" ? <MoonIcon size={18} /> : <SunIcon size={18} />
+            theme === "light" ?
+                <MoonIcon className="group-hover:scale-115 transition duration-700" size={18} />
+                :
+                <SunIcon size={18} className="group-hover:scale-115 transition duration-700" />
         }
     </Button>
 }

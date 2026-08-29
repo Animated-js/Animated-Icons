@@ -11,7 +11,6 @@ const fontDisplay = localFont({
   variable: "--font-display"
 })
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 const fontMono = IBM_Plex_Mono({
   weight: ["400", '600'],
   subsets: ['latin'],
@@ -29,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn("font-mono", fontMono.variable)} suppressHydrationWarning>
 
-      <body className={`${fontDisplay.variable} ${geist.variable} ${fontMono.variable}`} >
+      <body className={`${fontDisplay.variable} ${fontMono.variable}`} >
 
         <ThemeProvider attribute="class"
           enableSystem
