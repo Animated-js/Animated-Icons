@@ -1,0 +1,30 @@
+{
+  "name": "@repo/icons",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.2.18"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js",
+      "default": "./build/index.js"
+    }
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "motion": "^13.1.1",
+    "react": "^19.2.8",
+    "tailwind-merge": "^3.6.0"
+  }
+}
