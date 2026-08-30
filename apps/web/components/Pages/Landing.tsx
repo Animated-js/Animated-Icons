@@ -6,6 +6,7 @@ import { TypeScriptIcon } from "../icons/Typescript";
 import { TailwindIcon } from "../icons/Tailwind";
 import { FramerMotionIcon } from "../icons/FramerMotion";
 import { SearchComponent } from "../ui/custom-ui/SearchComp";
+import { IconsGrid } from "../ui/custom-ui/IconsGrid";
 
 
 const WeWorkInData = [
@@ -76,7 +77,7 @@ export function Landing() {
 
             </div>
 
-            <div className="uppercase tracking-wider text-xs font-medium text-black flex border-black border items-center justify-between px-4 md:px-6 lg:px-20 py-2 lg:py-3">
+            <div className="uppercase tracking-wider text-xs font-medium text-white dark:text-black flex border-t items-center justify-between px-4 md:px-6 lg:px-20 py-2 lg:py-3">
                 {WeWorkInData.map((data) => {
                     return <span key={data.name}>
                         {data.name}
@@ -88,10 +89,20 @@ export function Landing() {
 
 
         {/* Icons section */}
-        <section className="py-20 w-full px-20 bg-white dark:bg-black">
-            <div className="w-full flex justify-center">
-                <SearchComponent />
+        <section className="w-full pt-3 bg-white dark:bg-black">
+
+            <div className="w-full flex p-10 border-ash border-t flex-col items-center gap-8 ">
+
+                <div className="w-full items-center-center md:items-start 
+                md:pl-10 lg:pl-15">
+                    <SearchComponent />
+                </div>
+
+                <div className="w-full p-5">
+                    <IconsGrid />
+                </div>
             </div>
+
         </section>
 
 
