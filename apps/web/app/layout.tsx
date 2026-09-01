@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Geist } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local"
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Header } from "@/components/header";
+import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/Footer";
 

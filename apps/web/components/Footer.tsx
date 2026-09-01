@@ -2,8 +2,6 @@
 
 
 import Link from "next/link";
-import { Heart, XIcon } from "lucide-react";
-import { GithubIcon } from "./icons/Github";
 import { AnimatedOrgLink } from "@/lib/Links";
 
 export function Footer() {

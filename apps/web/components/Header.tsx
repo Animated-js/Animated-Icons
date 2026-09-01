@@ -1,8 +1,8 @@
 import { AnimatedOrgLink, GithubRepoLink, XLink } from "@/lib/Links";
 import Link from "next/link";
 import { GithubIcon } from "./icons/Github";
-import { ThemeToggle } from "./ui/theme";
 import { XIcon } from "./icons/X";
+import { ThemeToggle } from "./ui/theme";
 
 
 const NavigationItems = [

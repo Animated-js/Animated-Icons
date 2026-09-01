@@ -3,6 +3,7 @@ import { IconHandle, IconsRegistry } from "@repo/icons";
 import { CopyButton } from "../animate-ui/components/buttons/copy";
 import { Download } from "lucide-react";
 import { useRef } from "react";
+import { DownloadFileFunction } from "@/lib/utils";
 
 
 export function IconsGrid() {
@@ -16,7 +17,13 @@ export function IconsGrid() {
 }
 
 
-function IconCard({ Data }: { Data: any }) {
+function IconCard({ Data }: {
+    Data: {
+        Icon: any;
+        code: string;
+        name: string;
+    }
+}) {
 
     const animateRef = useRef<IconHandle>(null);
 
@@ -36,7 +43,10 @@ function IconCard({ Data }: { Data: any }) {
         </div>
         <span className=" border-t flex justify-between w-full items-center px-3.5 py-2">
             <span className="border p-1.5">
-                <Download size={16} />
+                <Download size={16}
+                    onClick={() => {
+                        DownloadFileFunction(Data.code, Data.name);
+                    }} />
             </span>
             <CopyButton className="rounded-none p-1.5 dark:bg-white bg-black text-white dark:text-black" size={"xs"} content={Data.code} title="Copy" />
         </span>
