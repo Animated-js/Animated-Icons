@@ -14,7 +14,7 @@ const NavigationItems = [
 
 export function Header() {
 
-    return <header className="fixed z-10 md:mt-2 py-4 w-full min-h-17 flex items-center justify-between px-4 md:px-6 lg:px-20 dark:bg-black bg-white">
+    return <header className="fixed z-10 md:mt-2 py-4 w-full min-h-17 flex items-center justify-between px-4 md:px-6 lg:px-20 border-b dark:bg-black bg-white">
 
         <Link href={AnimatedOrgLink} >
 

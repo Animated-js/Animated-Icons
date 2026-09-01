@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/Footer";
 
 const fontDisplay = localFont({
   src: "./fonts/Melodrama-Variable.woff2",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <main className="">
             {children}
           </main>
+          <Footer />
 
         </ThemeProvider>
       </body>
