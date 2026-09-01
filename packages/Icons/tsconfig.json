@@ -4,6 +4,11 @@
     "lib": [
       "ESNext"
     ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "target": "ESNext",
     "module": "Preserve",
     "moduleDetection": "force",
@@ -26,5 +31,13 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
 }

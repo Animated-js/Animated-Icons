@@ -3,7 +3,7 @@
 import { motion, useAnimation, type TargetAndTransition, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useId, useImperativeHandle, useRef } from "react";
-import { cn } from "../Utils";
+import { cn } from "@/lib/utils";
 
 
 export interface TwitterIconHandle {

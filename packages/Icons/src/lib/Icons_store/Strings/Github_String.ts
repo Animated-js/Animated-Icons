@@ -1,9 +1,9 @@
-"use client";
+export const Github_String = `"use client";
 import type { Transition, Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
-import { cn } from "../Utils";
+import { cn } from "@/lib/utils";
 
 export interface GithubIconHandle {
     startAnimation: () => void;
@@ -158,4 +158,4 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
     }
 );
 GithubIcon.displayName = "GithubIcon";
-export { GithubIcon };
+export { GithubIcon };`;

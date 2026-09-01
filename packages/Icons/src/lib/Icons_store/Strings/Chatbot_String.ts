@@ -1,9 +1,9 @@
-"use client";
+export const Chatbot_String = `"use client";
 
 import { motion, useAnimation, type TargetAndTransition } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
-import { cn } from "../Utils";
+import { cn } from "@/lib/utils";
 
 
 export interface ChatbotHandle {
@@ -170,3 +170,4 @@ export const ChatbotIcon = forwardRef<
 });
 
 ChatbotIcon.displayName = "ChatbotIcon";
+`;
