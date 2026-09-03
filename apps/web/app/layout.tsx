@@ -3,9 +3,9 @@ import { IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local"
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/ui/custom-ui/Header";
+import { Footer } from "@/components/ui/custom-ui/Footer";
 
 const fontDisplay = localFont({
   src: "./fonts/Melodrama-Variable.woff2",

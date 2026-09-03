@@ -1,8 +1,10 @@
-import { AnimatedOrgLink, GithubRepoLink, XLink } from "@/lib/Links";
+"use client"
+
+import { GithubRepoLink, XLink } from "@/lib/Links";
 import Link from "next/link";
-import { GithubIcon } from "./icons/Github";
-import { XIcon } from "./icons/X";
-import { ThemeToggle } from "./ui/theme";
+import { GithubIcon } from "@/components/icons/Github";
+import { XIcon } from "@/components/icons/X";
+import { ThemeToggle } from "./theme";
 
 
 const NavigationItems = [
@@ -14,11 +16,14 @@ const NavigationItems = [
 
 export function Header() {
 
+
     return <header className="fixed z-10 md:mt-2 py-4 w-full min-h-17 flex items-center justify-between px-4 md:px-6 lg:px-20 border-b dark:bg-black bg-white">
 
-        <Link href={AnimatedOrgLink} >
 
-            <h1 className="tracking-widest text-black dark:text-white text-2xl px-2 rounded-xs font-medium">
+        <Link href={'/'} onClick={() => {
+            scroll({ top: 0, left: 0, behavior: "smooth" },)
+        }}>
+            <h1 className="tracking-widest text-black dark:text-white text-2xl px-2 rounded-xs font-medium cursor-pointer">
                 Animated
             </h1>
         </Link>

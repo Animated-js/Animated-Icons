@@ -7,8 +7,8 @@ import { AnimatedOrgLink } from "@/lib/Links";
 export function Footer() {
     return (
         <footer className="border-t bg-background/50 backdrop-blur-sm mt-20">
-            <div className="max-w-7xl mx-auto px-4 py-12">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-6">
+            <div className="mx-auto px-4 lg:px-8 py-12">
+                <div className="flex flex-col md:flex-row justify-between lg:gap-70 md:gap-40 gap-10">
 
                     <div className="flex flex-col gap-3 md:max-w-1/4 border-b md:border-none">
                         <h1 className="tracking-wide text-4xl flex items-center gap-2">
@@ -21,8 +21,9 @@ export function Footer() {
                     </div>
 
 
-                    <div className="flex gap-15 justify-end pt-1">
-                        <div className="flex flex-col gap-3">
+                    <div className="grid grid-cols-2 gap-10 lg:grid-cols-3 justify-end pt-1">
+
+                        <div className="flex flex-col col-span-1 gap-3">
                             <h4 className="tracking-tighter font-medium text-lg text-foreground">
                                 Library
                             </h4>
@@ -48,8 +49,7 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Col 3: Community & Feedback */}
-                        <div className="flex flex-col gap-2 tracking-tighter">
+                        <div className="flex flex-col col-span-1s gap-2 tracking-tighter">
                             <h4 className="font-medium  tracking-tight text-lg text-foreground">
                                 Community
                             </h4>
@@ -88,7 +88,7 @@ export function Footer() {
                         </div>
 
 
-                        <div className="flex flex-col gap-2 max-w-1/4 ">
+                        <div className="flex flex-col col-span-1 lg:max-w-1/2 gap-2">
 
                             <h4 className="font-medium tracking-tighter text-lg text-foreground">
                                 Legal

@@ -3,9 +3,9 @@
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
-import { SunIcon } from "../icons/Sun"
 import { useEffect, useState } from "react";
-import { MoonIcon } from "../icons/Moon";
+import { MoonIcon } from "@/components/icons/Moon";
+import { SunIcon } from "@/components/icons/Sun";
 
 
 export function ThemeToggle() {
