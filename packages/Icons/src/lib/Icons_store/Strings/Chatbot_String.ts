@@ -116,54 +116,6 @@ export const ChatbotIcon = forwardRef<
                         } as TargetAndTransition,
                     }}
                 />
-                <motion.circle
-                    cx="10"
-                    cy="18"
-                    r="0.5"
-                    variants={{
-                        normal: { opacity: 0 },
-                        animate: {
-                            opacity: [0.3, 1, 0.3],
-                            transition: {
-                                repeat: Number.POSITIVE_INFINITY,
-                                duration: 1.2,
-                                delay: 0,
-                            },
-                        } as TargetAndTransition,
-                    }}
-                />
-                <motion.circle
-                    cx="12"
-                    cy="18"
-                    r="0.5"
-                    variants={{
-                        normal: { opacity: 0 },
-                        animate: {
-                            opacity: [0.3, 1, 0.3],
-                            transition: {
-                                repeat: Number.POSITIVE_INFINITY,
-                                duration: 1.2,
-                                delay: 0.3,
-                            },
-                        } as TargetAndTransition,
-                    }}
-                />
-                <motion.circle
-                    cx="14"
-                    cy="18"
-                    r="0.5"
-                    variants={{
-                        normal: { opacity: 0 },
-                        animate: {
-                            opacity: [0.3, 1, 0.3],
-                            transition: {
-                                repeat: Number.POSITIVE_INFINITY,
-                                duration: 1.2,
-                                delay: 0.6,
-                            },
-                        } as TargetAndTransition,
-                    }}
-                />
             </motion.svg>
         </div>
     );

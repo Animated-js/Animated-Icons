@@ -1,3 +1,10 @@
+export { ChatbotIcon } from "./lib/Icons_store/Icons/Chatbot";
+export { GithubIcon } from "./lib/Icons_store/Icons/Github";
+export { MoonIcon } from "./lib/Icons_store/Icons/Moon";
+export { SearchIcon } from "./lib/Icons_store/Icons/Search";
+export { SunIcon } from "./lib/Icons_store/Icons/Sun";
+export { XIcon } from "./lib/Icons_store/Icons/X";
+
 import { ChatbotIcon } from "./lib/Icons_store/Icons/Chatbot";
 import { GithubIcon } from "./lib/Icons_store/Icons/Github";
 import { MoonIcon } from "./lib/Icons_store/Icons/Moon";
@@ -20,25 +27,27 @@ export interface IconHandle {
 
 
 export const IconsRegistry = [
-    { Icon: ChatbotIcon, code: Chatbot_String, name: "ChatbotIcon" },
-    { Icon: GithubIcon, code: Github_String, name: "GithubIcon" },
-    { Icon: MoonIcon, code: Moon_String, name: "MoonIcon" },
-    { Icon: SearchIcon, code: Search_String, name: "SearchIcon" },
-    { Icon: SunIcon, code: Sun_String, name: "SunIcon" },
-    { Icon: XIcon, code: X_String, name: "XIcon" },
-    { Icon: GithubIcon, code: Github_String, name: "GithubIcon" },
-    { Icon: MoonIcon, code: Moon_String, name: "MoonIcon" },
-    { Icon: SearchIcon, code: Search_String, name: "SearchIcon" },
-    { Icon: SunIcon, code: Sun_String, name: "SunIcon" },
-    { Icon: XIcon, code: X_String, name: "XIcon" },
-    { Icon: GithubIcon, code: Github_String, name: "GithubIcon" },
-    { Icon: MoonIcon, code: Moon_String, name: "MoonIcon" },
-    { Icon: SearchIcon, code: Search_String, name: "SearchIcon" },
-    { Icon: SunIcon, code: Sun_String, name: "SunIcon" },
-    { Icon: XIcon, code: X_String, name: "XIcon" },
-    { Icon: GithubIcon, code: Github_String, name: "GithubIcon" },
-    { Icon: MoonIcon, code: Moon_String, name: "MoonIcon" },
-    { Icon: SearchIcon, code: Search_String, name: "SearchIcon" },
-    { Icon: SunIcon, code: Sun_String, name: "SunIcon" },
-    { Icon: XIcon, code: X_String, name: "XIcon" },
+    { Icon: ChatbotIcon, code: Chatbot_String, name: "Chatbot" },
+    { Icon: GithubIcon, code: Github_String, name: "Github" },
+    { Icon: MoonIcon, code: Moon_String, name: "Moon" },
+    { Icon: SearchIcon, code: Search_String, name: "Search" },
+    { Icon: SunIcon, code: Sun_String, name: "Sun" },
+    { Icon: XIcon, code: X_String, name: "X" },
+    { Icon: GithubIcon, code: Github_String, name: "Github" },
+    { Icon: MoonIcon, code: Moon_String, name: "Moon" },
+    { Icon: SearchIcon, code: Search_String, name: "Search" },
+    { Icon: SunIcon, code: Sun_String, name: "Sun" },
+    { Icon: XIcon, code: X_String, name: "X" },
+    { Icon: GithubIcon, code: Github_String, name: "Github" },
+    { Icon: MoonIcon, code: Moon_String, name: "Moon" },
+    { Icon: SearchIcon, code: Search_String, name: "Search" },
+    { Icon: SunIcon, code: Sun_String, name: "Sun" },
+    { Icon: XIcon, code: X_String, name: "X" },
+    { Icon: GithubIcon, code: Github_String, name: "Github" },
+    { Icon: MoonIcon, code: Moon_String, name: "Moon" },
+    { Icon: SearchIcon, code: Search_String, name: "Search" },
+    { Icon: SunIcon, code: Sun_String, name: "Sun" },
+    { Icon: XIcon, code: X_String, name: "X" },
 ];
+
+
