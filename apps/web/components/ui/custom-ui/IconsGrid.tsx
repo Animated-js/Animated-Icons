@@ -8,11 +8,14 @@ import { DownloadFileFunction } from "@/lib/utils";
 
 export function IconsGrid() {
 
-    return <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+    const LimitedIcons = IconsRegistry.slice(0, 21);
+    return <div className="flex flex-col  w-full gap-8" >
 
-        {IconsRegistry.map((Data, idx) => {
-            return <IconCard key={idx} Data={Data} />
-        })}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {LimitedIcons.map((Data, idx) => {
+                return <IconCard key={idx} Data={Data} />
+            })}
+        </div>
     </div>
 }
 

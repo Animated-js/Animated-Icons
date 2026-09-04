@@ -5,8 +5,8 @@ import { ReactIcon } from "../icons/React";
 import { TypeScriptIcon } from "../icons/Typescript";
 import { TailwindIcon } from "../icons/Tailwind";
 import { FramerMotionIcon } from "../icons/FramerMotion";
-import { SearchComponent } from "../ui/custom-ui/SearchComp";
-import { IconsGrid } from "../ui/custom-ui/IconsGrid";
+import Link from "next/link";
+import { BentoGrid } from "./BentoGrid";
 
 
 const WeWorkInData = [
@@ -17,10 +17,10 @@ const WeWorkInData = [
 ]
 
 export function Landing() {
-    return <div className=" min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black">
+    return <div className=" min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black pt-28 md:pt-8 lg:pt-22">
 
         {/* Hero section */}
-        <section className="flex justify-between flex-col pt-28 md:10 lg:pt-22 gap-8 dark:bg-black bg-whitblacke w-full min-h-screen md:min-h-auto" >
+        <section className="flex justify-between flex-col gap-8 dark:bg-black bg-whitblacke w-full min-h-screen md:min-h-auto" >
 
             <div className="flex flex-col gap-13 w-full md:w-fit md:ml-8 lg:ml-24 py-15 px-10 bg-black dark:bg-white text-white dark:text-black">
 
@@ -42,10 +42,11 @@ export function Landing() {
                     </h1>
 
                     <div className="gap-4 md:gap-8 flex flex-col md:flex-row pl-4" >
-                        <Button variant={"noClass"} className="uppercase text-xs bg-yellow-300 text-black px-3 py-5 rounded-none">
+                        <Link href={'/icons'}
+                            className="uppercase text-xs bg-yellow-300 text-black px-3 py-2 rounded-none flex gap-1 items-center">
                             Explore Icons
-                            <SearchIcon />
-                        </Button>
+                            <SearchIcon size={17} />
+                        </Link>
                         <Button variant={"noClass"} className="uppercase text-xs px-3 py-5 rounded-none text-white dark:text-black border border-ash/50">
                             <BotMessageSquareIcon />
                             Prompt to Icon
@@ -86,25 +87,8 @@ export function Landing() {
             </div>
         </section >
 
-
-
-        {/* Icons section */}
-        <section className="w-full pt-3 bg-white dark:bg-black">
-
-            <div className="w-full flex pt-10 border-ash flex-col items-center gap-8 ">
-
-                <div className="w-full items-center-center md:items-start 
-                px-5 md:pl-10 lg:pl-15">
-                    <SearchComponent />
-                </div>
-
-                <div className="w-full p-5">
-                    <IconsGrid />
-                </div>
-            </div>
-
-        </section>
-
+        {/* Bento Grid Showcase Section */}
+        <BentoGrid />
 
     </div >
 }
