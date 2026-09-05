@@ -88,7 +88,7 @@ export function Footer() {
                         </div>
 
 
-                        <div className="flex flex-col col-span-1 lg:max-w-1/2 gap-2">
+                        <div className="flex flex-col col-span-1 lg:max-w-3/5 gap-2">
 
                             <h4 className="font-medium tracking-tighter text-lg text-foreground">
                                 Legal
