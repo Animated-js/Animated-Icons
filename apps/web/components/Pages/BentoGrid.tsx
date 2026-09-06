@@ -40,8 +40,6 @@ export function BentoGrid() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 <PlaygroundCard />
 
-                <CodeIntegrationCard />
-
                 <ThemeAdaptabilityCard />
 
                 <MotionDynamicsCard />
@@ -93,7 +91,7 @@ function PlaygroundCard() {
     };
 
     return (
-        <div className="lg:col-span-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-between gap-6 transition-all duration-200 hover:border-black dark:hover:border-neutral-600 relative overflow-hidden group">
+        <div className="md:col-span-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-between gap-6 transition-all duration-200 hover:border-black dark:hover:border-neutral-600 relative overflow-hidden group">
 
             <div className="absolute inset-0 bg-[radial-gradient(#000000_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none" />
 
@@ -162,70 +160,6 @@ function PlaygroundCard() {
 }
 
 
-function CodeIntegrationCard() {
-    const [framework, setFramework] = useState<"react" | "next" | "html">("react");
-
-    const codeSnippets = {
-        react: `import { SearchIcon } from "@repo/icons";\n\nexport function Component() {\n  return <SearchIcon size={32} />;\n}`,
-        next: `"use client";\nimport { SearchIcon } from "@repo/icons";\n\nexport default function Page() {\n  return <SearchIcon size={32} />;\n}`,
-        html: `<script src="https://cdn.animated.dev/icons.js"></script>\n\n<animated-icon name="search" size="32"></animated-icon>`,
-    };
-
-    return (
-        <div className="bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-between gap-4 transition-all duration-200 hover:border-black dark:hover:border-neutral-600">
-            {/* Top Bar */}
-            <div className="flex justify-between items-start">
-                <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
-                        [02 / INTEGRATION]
-                    </span>
-                    <h3 className="text-xl font-mono text-black dark:text-white flex items-center gap-2">
-                        <Code size={20} /> Developer Experience
-                    </h3>
-                </div>
-            </div>
-
-            {/* Framework Selector Tabs */}
-            <div className="flex border-b border-neutral-300 dark:border-neutral-800 gap-2">
-                {(["react", "next", "html"] as const).map((tab) => (
-                    <button
-                        key={tab}
-                        onClick={() => setFramework(tab)}
-                        className={`text-xs font-mono uppercase pb-2 px-1 transition-colors relative ${framework === tab
-                            ? "text-black dark:text-white font-bold"
-                            : "text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
-                            }`}
-                    >
-                        {tab}
-                        {framework === tab && (
-                            <motion.div
-                                layoutId="framework-tab"
-                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
-                            />
-                        )}
-                    </button>
-                ))}
-            </div>
-
-            {/* Monospace Code Display Container */}
-            <div className="bg-black text-white p-4 font-mono text-xs overflow-x-auto relative rounded-none border border-neutral-800 min-h-[140px] flex flex-col justify-between">
-                <pre className="text-neutral-300 leading-relaxed">
-                    <code>{codeSnippets[framework]}</code>
-                </pre>
-
-                {/* Animated Copy Button */}
-                <div className="self-end mt-2">
-                    <CopyButton
-                        content={codeSnippets[framework]}
-                        size="xs"
-                        className="bg-white text-black hover:bg-yellow-300 hover:text-black border-none rounded-none text-[10px] uppercase font-mono px-2 py-1"
-                    />
-                </div>
-            </div>
-        </div>
-    );
-}
-
 function ThemeAdaptabilityCard() {
     const [cardTheme, setCardTheme] = useState<"light" | "dark">("light");
     const sunRef = useRef<IconHandle>(null);
@@ -254,7 +188,7 @@ function ThemeAdaptabilityCard() {
         >
             <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest opacity-60 block mb-1">
-                    [03 / ADAPTABILITY]
+                    [02 / ADAPTABILITY]
                 </span>
                 <h3 className="text-xl font-mono">Theme Polarity</h3>
             </div>
@@ -304,7 +238,7 @@ function MotionDynamicsCard() {
         <div className="bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-start gap-6 transition-all duration-200 hover:border-black dark:hover:border-neutral-600">
             <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
-                    [04 / DYNAMICS]
+                    [03 / DYNAMICS]
                 </span>
                 <h3 className="text-xl font-mono text-black dark:text-white flex items-center gap-2">
                     <Sliders size={18} />
@@ -340,7 +274,7 @@ function IconSuiteGridCard() {
 
             <div className="flex flex-col items-start">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
-                    [05 / ICON SUITE]
+                    [04 / ICON SUITE]
                 </span>
                 <div className="">
                     <h3 className="text-xl md:text-2xl font-mono text-black dark:text-white">
