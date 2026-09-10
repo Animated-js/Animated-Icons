@@ -8,13 +8,12 @@ import { GithubIcon } from "@repo/icons";
 import { XIcon } from "@repo/icons";
 import { SunIcon } from "@repo/icons";
 import { MoonIcon } from "@repo/icons";
-import { CopyButton } from "../ui/animate-ui/components/buttons/copy";
+import { CopyButton } from "../animate-ui/components/buttons/copy";
 import { Sliders, Code, Check, RefreshCw } from "lucide-react";
 
 export function BentoGrid() {
     return (
         <section className="w-full py-16 px-4 md:px-6 lg:px-20 bg-white dark:bg-black border-t border-ash/30 transition-colors duration-300">
-
             <div className="flex flex-col gap-3 mb-12 border-y py-5">
                 <div className="flex items-center gap-2 text-xs uppercase font-mono tracking-widest text-black dark:text-white">
                     <span className="text-yellow-400 font-bold">
@@ -36,20 +35,15 @@ export function BentoGrid() {
                 </div>
             </div>
 
-            {/* Bento Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 <PlaygroundCard />
-
                 <ThemeAdaptabilityCard />
-
                 <MotionDynamicsCard />
-
                 <IconSuiteGridCard />
             </div>
         </section>
     );
 }
-
 
 function PlaygroundCard() {
     const [activeTrigger, setActiveTrigger] = useState<"hover" | "click" | "loop">("hover");
@@ -92,7 +86,6 @@ function PlaygroundCard() {
 
     return (
         <div className="md:col-span-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-between gap-6 transition-all duration-200 hover:border-black dark:hover:border-neutral-600 relative overflow-hidden group">
-
             <div className="absolute inset-0 bg-[radial-gradient(#000000_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none" />
 
             <div className="flex justify-between items-start">
@@ -106,7 +99,9 @@ function PlaygroundCard() {
                 </div>
                 <div className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-2.5 py-1 text-xs font-mono">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span>{activeTrigger.toUpperCase()} MODE</span>
+                    <span>
+                        {activeTrigger.toUpperCase()} MODE
+                    </span>
                 </div>
             </div>
 
@@ -139,7 +134,6 @@ function PlaygroundCard() {
                 </div>
             </div>
 
-            {/* Bottom Controls */}
             <div className="flex flex-wrap gap-2">
                 {(["hover", "click", "loop"] as const).map((mode) => (
                     <button
@@ -151,14 +145,15 @@ function PlaygroundCard() {
                             }`}
                     >
                         {mode === "loop" && <RefreshCw size={12} />}
-                        {mode}
+                        <span>
+                            {mode}
+                        </span>
                     </button>
                 ))}
             </div>
         </div>
     );
 }
-
 
 function ThemeAdaptabilityCard() {
     const [cardTheme, setCardTheme] = useState<"light" | "dark">("light");
@@ -190,7 +185,9 @@ function ThemeAdaptabilityCard() {
                 <span className="text-[10px] font-mono uppercase tracking-widest opacity-60 block mb-1">
                     [02 / ADAPTABILITY]
                 </span>
-                <h3 className="text-xl font-mono">Theme Polarity</h3>
+                <h3 className="text-xl font-mono">
+                    Theme Polarity
+                </h3>
             </div>
 
             <div className="py-8 flex items-center justify-center gap-6 border border-current/20 bg-current/5">
@@ -219,15 +216,17 @@ function ThemeAdaptabilityCard() {
                                 : "border-current/40 hover:bg-current/10"
                             }`}
                     >
-                        {t}
+                        <span>
+                            {t}
+                        </span>
                     </button>
                 ))}
             </div>
         </div>
     );
 }
-function MotionDynamicsCard() {
 
+function MotionDynamicsCard() {
     const searchRef = useRef<IconHandle>(null);
 
     const triggerMotion = () => {
@@ -257,21 +256,16 @@ function MotionDynamicsCard() {
                 <span className="mt-3 text-[10px] font-mono uppercase text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                     Hover/Click to preview dynamics
                 </span>
-
             </div>
-
         </div>
     );
 }
 
 function IconSuiteGridCard() {
-
     const iconsSuite = IconsRegistry.slice(0, 6);
-
 
     return (
         <div className="md:col-span-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-6 md:p-8 flex flex-col justify-between gap-6 transition-all duration-200 hover:border-black dark:hover:border-neutral-600 relative">
-
             <div className="flex flex-col items-start">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 dark:text-neutral-400 block mb-1">
                     [04 / ICON SUITE]
@@ -286,17 +280,16 @@ function IconSuiteGridCard() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-6 bg-zinc-200  dark:bg-accent-foreground  py-7 px-9 w-4/5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 p-4 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 w-full">
                 {iconsSuite.map((data) => (
-                    <span key={data.name} className="border border-ash w-fit py-3 px-5 flex items-center">
-                        <data.Icon size={30} />
-                    </span>
+                    <div key={data.name} className="border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 p-4 flex flex-col items-center justify-center gap-2 hover:border-black dark:hover:border-neutral-500 transition-colors group">
+                        <data.Icon size={28} className="text-black dark:text-white transition-transform group-hover:scale-110" />
+                        <span className="text-[10px] font-mono text-neutral-500 dark:text-neutral-400 uppercase truncate">
+                            {data.name}
+                        </span>
+                    </div>
                 ))}
             </div>
-
-
         </div>
     );
 }
-
-
