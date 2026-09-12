@@ -2,7 +2,7 @@
 
 
 import Link from "next/link";
-import { AnimatedOrgLink } from "@/lib/Links";
+import { AnimatedOrgLink, ContributeLink, MITLicenseLink, RequestAnIconLink, TrademarkPolicyLicenseLink } from "@/lib/Links";
 
 export function Footer() {
     return (
@@ -34,7 +34,7 @@ export function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="#docs" className="hover:underline underline-offset-2 hover:text-foreground transition-colors">
+                                    <Link href="/docs" className="hover:underline underline-offset-2 hover:text-foreground transition-colors">
                                         Docs
                                     </Link>
                                 </li>
@@ -56,7 +56,7 @@ export function Footer() {
                             <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
                                 <li>
                                     <a
-                                        href="https://github.com"
+                                        href={RequestAnIconLink}
                                         target="_blank"
                                         rel="noreferrer"
                                         className="hover:text-foreground hover:underline underline-offset-2 transition-colors"
@@ -66,7 +66,7 @@ export function Footer() {
                                 </li>
                                 <li>
                                     <a
-                                        href="https://github.com"
+                                        href={ContributeLink}
                                         target="_blank"
                                         rel="noreferrer"
                                         className="hover:text-foreground hover:underline underline-offset-2 transition-colors"
@@ -76,7 +76,7 @@ export function Footer() {
                                 </li>
                                 <li>
                                     <a
-                                        href="https://github.com/LICENSE"
+                                        href={MITLicenseLink}
                                         target="_blank"
                                         rel="noreferrer"
                                         className="hover:text-foreground hover:underline underline-offset-2 transition-colors"
@@ -97,10 +97,12 @@ export function Footer() {
                             <div className="flex flex-col">
                                 <p className="text-sm text-muted-foreground">
                                     Code & generic icons are released under the{" "}
-                                    <strong>MIT License</strong>.
+                                    <strong>
+                                        MIT License
+                                    </strong>.
                                 </p>
                                 <a
-                                    href="https://github.com/LICENSE"
+                                    href={TrademarkPolicyLicenseLink}
                                     target="_blank"
                                     rel="noreferrer"
                                     className="hover:text-foreground hover:underline underline-offset-2 text-sm transition-colors"
